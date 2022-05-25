@@ -1,0 +1,30 @@
+.menu {
+	position: sticky;
+	background-color: #536089;
+	border-bottom: 1px solid #dadada;
+	
+	& menu {
+		display: flex;
+		padding: 1.5em 2em;
+		justify-content: space-between;
+
+		& ul {
+			margin-left: 1em;
+
+			font-size: 130%;
+
+			&:first-child {
+				margin-left: 0em;
+			}
+
+			&:hover {
+				color: #1F3A6F;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__leave {
+		
+	}
+}

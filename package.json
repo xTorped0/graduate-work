@@ -1,0 +1,63 @@
+{
+  "name": "graduate-work",
+  "version": "0.0.1",
+  "description": "[Figma files](https://www.figma.com/file/3RZpwRX8xm7OzHz5p7wrBb/Untitled)",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack serve --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xTorped0/graduate-work.git"
+  },
+  "author": "Torped0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xTorped0/graduate-work/issues"
+  },
+  "homepage": "https://github.com/xTorped0/graduate-work#readme",
+  "keywords": [
+    "react",
+    "typescript",
+    "webpack"
+  ],
+  "dependencies": {
+    "antd": "^4.18.3",
+    "immer": "^9.0.14",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "reselect": "^4.1.5",
+    "webpack-cli": "^4.9.1"
+  },
+  "devDependencies": {
+    "@types/antd": "^1.0.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux": "^3.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.47.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-dev-server": "^4.7.3"
+  }
+}

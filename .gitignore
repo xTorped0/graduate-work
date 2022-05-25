@@ -1,0 +1,12 @@
+.git
+.idea
+.vscode
+.eslintrc.js
+
+node_modules
+
+npm-debug.log
+
+dist
+build
+
