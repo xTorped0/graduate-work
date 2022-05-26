@@ -1,0 +1,47 @@
+@import 'constants.scss';
+
+.footer {
+	display: flex;
+	align-items: center;
+
+	padding: 2.5em 3em;
+
+	text-transform: uppercase;
+
+	&__copyright {
+
+		margin-right: 3em;
+	}
+
+	&__social {
+
+		& a {
+			margin-right: 0.75em;
+
+			& svg {
+				fill: $primary-white;
+			}
+		}
+	}
+
+	&__settings {
+		display: flex;
+		margin: 0 auto;
+
+		.footer__languages {
+			display: flex;
+
+			.footer__language {
+				margin-right: 0.75em;
+
+				&.footer__language-active {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+
+	&__contact_us {
+
+	}
+}

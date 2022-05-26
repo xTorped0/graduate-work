@@ -1,4 +1,6 @@
 import React from 'react'
+import Footer from './modules/Footer'
+import Main from './modules/Main'
 import Menu from './modules/Menu'
 
 export default function App() {
@@ -7,8 +9,12 @@ export default function App() {
 			<header>
 				<Menu />
 			</header>
-			<section />
-			<footer />
+			<section>
+				<Main />
+			</section>
+			<footer>
+				<Footer />
+			</footer>
 		</>
 	)
 }

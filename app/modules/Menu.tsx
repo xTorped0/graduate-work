@@ -17,7 +17,7 @@ export default function Menu() {
 function Unauthorized() {
 	return (
 		<menu>
-			<ul>
+			<ul className="menu-active">
 				Головна
 			</ul>
 			<ul>

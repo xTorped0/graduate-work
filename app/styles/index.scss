@@ -1,1 +1,23 @@
 @import 'normal.scss';
+@import 'constants.scss';
+@import 'fonts.scss';
+
+#root, body, html {
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
+	width: 100%;
+
+	overflow: hidden;
+}
+
+#root {
+	color: $primary-white;
+	background: url('../../assets/background.png') center / cover no-repeat #1a1a1a50;;
+}
+
+#root>section {
+	flex: 1;
+	overflow: hidden;
+}
