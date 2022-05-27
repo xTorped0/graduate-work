@@ -4,20 +4,33 @@
 	display: flex;
 	height: 100%;
 	margin-top: 7em;
+
+	&::before {
+		content: "scroll";
+    position: absolute;
+		top: 32em;
+    left: 4.5em;
+    transform: rotate(271deg);
+    font-size: 150%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		color: $primary-color;
+	}
 	
 	&__main {
 		display: flex;
 		flex-direction: column;
 		flex: 3;
 	
-		height: 60%;
+		height: 70%;
 		padding-right: 4em;
 		margin-left: 10em;
 		overflow-y: scroll;
 		transform: scaleX(-1);
+		// transition: all 1s ease;
+		scroll-behavior: smooth;
 
 		&::-webkit-scrollbar-track {
-			background: transparent;
+			background: #767676;
 		}
 		&::-webkit-scrollbar-thumb {
 			background: $primary-color;
@@ -53,7 +66,7 @@
 		flex-direction: column;
 		flex: 2;
 
-		height: 60%;
+		height: 70%;
 
 		&.navigation {
 			// margin: 10% 3em auto 12em;
@@ -68,6 +81,11 @@
 
 			align-items: center;
 			margin-bottom: 2em;
+			text-decoration: none;
+			color: $primary-white;
+
+			cursor: pointer;
+			transition: color, 1s ease;
 		}
 		.navigation__item-current {
 			color: $primary-color;
@@ -92,10 +110,13 @@
 			font-size: 150%;
 			
 			color: #999999;
+
+			margin-right: 2em;
 		}
 		.navigation__text {
 			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 			font-size: 150%;
+			white-space: nowrap;
 		}
 	}
 	
