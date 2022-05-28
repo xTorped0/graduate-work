@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useIntersection from '../../helpers/IsInViewoport';
 import '../styles/main.scss'
+import Auth from './Auth';
 
 
 export default function Main() {
@@ -22,9 +23,6 @@ export default function Main() {
 
 	const [inVieport1, inVieport2, inVieport3, inVieport4, inVieport5] = viewPorts
 
-	const onScroll = (e: React.UIEvent<HTMLElement>) => {
-		//
-	}
 	const onLink = (ref:React.MutableRefObject<HTMLElement>) => () => {
 		// @ts-ignore
 		if(ref.current) ref.current.parentNode.scrollTop = ref.current.offsetTop;
@@ -37,7 +35,7 @@ export default function Main() {
 
 	return (
 		<div className="content">
-			<div className="content__main" onScroll={onScroll}>
+			<div className="content__main">
 				<div className="content__item" ref={ref1}>
 					<div className="content__title" id="01">
 						<h1> Хто ми? </h1>
@@ -165,6 +163,7 @@ export default function Main() {
 				0
 				{current}
 			</div>
+			<Auth />
 		</div>
 	)
 }

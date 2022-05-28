@@ -8,7 +8,7 @@ module.exports = {
 	entry: {
 		app: path.join(__dirname, 'index.tsx')
 	},
-	devtool: 'inline-source-map',
+	devtool: 'eval-source-map',
 	stats: 'minimal',
 	target: 'web',
 	resolve: {
@@ -52,7 +52,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',

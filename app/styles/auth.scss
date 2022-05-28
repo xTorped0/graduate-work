@@ -1,0 +1,121 @@
+@import '../styles/constants.scss';
+
+.auth {
+	display: flex;
+
+	height: 30em;
+	width: 45em;
+
+	color: #bbbbbb;
+
+	&__instruction {
+		display: flex;
+		padding: 2em 1em;
+		flex: 1;
+
+		background: url('../../assets/background2.png') center;
+
+		font-style: italic;
+		// color: $primary-color;
+
+		p {
+			align-self: end;
+		}
+
+		a {
+			color: #cfcfcf;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		flex: 2;
+	}
+
+	&__container {
+		padding: 3em 1.5em;
+		
+		flex: 1;
+	}
+	&__header {
+		color: $primary-color;
+		font-size: 200%;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+		margin-bottom: 1em;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		form {
+			display: flex;
+			flex-direction: column;
+
+			gap: 1em;
+
+			.auth__placeholder {
+				font-family: Lobster;
+				font-size: 85%;
+			}
+
+			.auth__input {
+				font-size: 140%;
+
+				background: transparent!important;
+				border-color: transparent transparent transparent transparent;
+				border-bottom: 1px solid #626262;
+
+				color: $primary-color;
+				outline:none;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+
+		strong {
+			display: flex;
+			flex: 1;
+   
+    	font-weight: lighter;
+    	font-family: Lobster;
+			background: #595959;
+			
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		button {
+			height: 5em;
+			width: 3em;
+
+			color: $primary-white;
+			
+			background: #595959;
+			text-transform: uppercase;
+
+			border: none;
+			transition: background 1s ease;
+
+			pointer-events: none;
+
+			&.active:hover {
+				background: #c19405;
+				cursor: pointer;
+			}
+
+			&.active {
+				pointer-events: all;
+				background: $primary-color;
+			}
+		}
+	}
+}

@@ -85,7 +85,7 @@
 			color: $primary-white;
 
 			cursor: pointer;
-			transition: color, 1s ease;
+			transition: color 1s ease;
 		}
 		.navigation__item-current {
 			color: $primary-color;

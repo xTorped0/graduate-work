@@ -1,12 +1,16 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducerType } from '../store'
+
+import { setDialogOpened } from '../store/main/actions'
 import '../styles/menu.scss'
 
 export default function Menu() {
-	const { authorized = false } = {}
+	const { auth, error } = useSelector((state: RootReducerType) => state.main)
 	return (
 		<nav className="menu">
 			{
-				authorized
+				auth && !error
 					? <Authorized />
 					: <Unauthorized />
 			}
@@ -15,13 +19,18 @@ export default function Menu() {
 }
 
 function Unauthorized() {
+	const dispatch = useDispatch()
+
+	const onClick = () => {
+		dispatch(setDialogOpened(true))
+	}
 	return (
 		<menu>
 			<ul className="menu-active">
 				Головна
 			</ul>
-			<ul>
-				Зарееструватися
+			<ul onClick={onClick}>
+				Авторизуватися
 			</ul>
 		</menu>
 	)
