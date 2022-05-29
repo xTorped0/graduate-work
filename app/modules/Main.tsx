@@ -1,10 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useIntersection from '../../helpers/IsInViewoport';
 import '../styles/main.scss'
-import Auth from './Auth';
 
+import Auth from './Auth';
+import Footer from './Footer'
+import Menu from './Menu'
 
 export default function Main() {
+	return (
+		<>
+			<header>
+				<Menu />
+			</header>
+			<section>
+				<Content />
+			</section>
+			<footer>
+				<Footer />
+			</footer>
+		</>
+	)
+}
+
+function Content() {
 	const [current, setCurrent] = useState(1)
 
 	const ref1 = useRef()

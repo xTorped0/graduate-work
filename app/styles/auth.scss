@@ -4,7 +4,7 @@
 	display: flex;
 
 	height: 30em;
-	width: 45em;
+	max-width: 45em;
 
 	color: #bbbbbb;
 
@@ -80,7 +80,7 @@
 		align-items: center;
 		justify-content: center;
 
-		strong {
+		span {
 			display: flex;
 			flex: 1;
    

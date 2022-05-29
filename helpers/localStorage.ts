@@ -43,6 +43,10 @@ export function getLocal() {
 	return data ? JSON.parse(data) : {}
 }
 
+export function removeLocal() {
+	storage.removeItem(getFullKey())
+}
+
 function getFullKey(): string {
 	return 'graduate'
 }

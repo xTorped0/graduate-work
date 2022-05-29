@@ -25,8 +25,6 @@ export default function Auth() {
 	}
 
 	const onAuth = () => {
-		console.log(1);
-		
 		// @ts-ignore
 		dispatch(getInitData(inputs))
 	}
@@ -71,7 +69,7 @@ export default function Auth() {
 						</div>
 					</div>
 					<div className="auth__footer">
-						<strong> Авторизувати </strong>
+						<span> Авторизувати </span>
 						<button
 							type="button"
 							onClick={onAuth}

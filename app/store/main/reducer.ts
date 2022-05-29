@@ -1,6 +1,7 @@
 import { Constants } from './constants';
 import * as actions from './actions'
 import { AuthData, MainData } from './types';
+import { getLocal } from '../../../helpers/localStorage';
 
 export type InterValueTypes<T> = T extends { [key: string]: infer U } ? U : never;
 export type action_types = ReturnType<InterValueTypes<typeof actions>>
@@ -12,8 +13,12 @@ interface State {
 	error?: Error;
 }
 
+const localData = getLocal()
+
 const initialState: State = {
-	isDialogOpen: false
+	isDialogOpen: false,
+	auth: localData.auth,
+	main: localData.main
 }
 
 export default function reducer(state = initialState, action: action_types): State {

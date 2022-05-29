@@ -62,6 +62,13 @@ module.exports = {
 					useRelativePaths: true
 				},
 			},
+			{
+				test: /\.(png|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'images/[hash][ext][query]'
+				}
+			},
 			// {
 			// 	test: /\.(png|jpg)$/,
 			// 	loader: 'url-loader'
@@ -81,7 +88,8 @@ module.exports = {
 			logging: 'none',
 			overlay: true,
 			progress: true,
-		}
+		},
+		historyApiFallback: true,
 		// hot: true
 	},
 	plugins: [
