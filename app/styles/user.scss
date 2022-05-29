@@ -1,0 +1,103 @@
+@import '../styles/constants.scss';
+
+.user {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	
+	margin: 2em 4em;
+	padding: 2em;
+
+	background-color: #3c3c3cc7;
+
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+	&__info {
+
+	}
+
+	&__preview {
+		display: flex;
+
+		align-items: center;
+	}
+
+	&__icon {
+		position: relative;
+
+		width: 5em;
+		height: 5em;
+
+		margin-right: 2em;
+
+		svg {
+			fill: $primary-white;
+		}
+	}
+
+	&__edit {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: $primary-color;
+		width: 2em;
+		height: 2em;
+		border-radius: 3em;
+
+		position: absolute;
+    bottom: 0;
+		right: 0;
+
+		svg {
+			fill: $primary-white;
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+
+	&__text {
+
+	}
+
+	&__title {
+
+	}
+
+	&__subtitle {
+		font-family: Tourney;
+	}
+
+	&__stats {
+		display: flex;
+		flex-wrap: wrap;
+
+		gap: 1em 2em;
+
+		margin-top: 4em;
+	}
+
+	&__stat-item {
+		
+	}
+
+	.stat-item {
+		width: 15em;
+		white-space: nowrap;
+
+			&__title {
+				font-size: 120%;
+				font-family: Tourney;
+	
+				margin-bottom: 1em;
+			}
+
+			&__value {
+				margin-left: .5em;
+				color: $primary-color;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				font-size: 150%;
+			}
+	}
+
+}
