@@ -62,12 +62,14 @@
 		background: transparent;
 		border: none;
 
-		text-transform: uppercase;
+		// text-transform: uppercase;
 
 		color: $primary-white;
 
-		font-size: 130%;
+		// font-size: 130%;
 		margin-bottom: 0.75em*2+0.2em;
+
+		font-style: italic;
 
 		&:hover {
 			color: $secondary-color;

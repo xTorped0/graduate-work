@@ -56,11 +56,13 @@ export interface Dividend {
 	isin: string;
 	currency: string;
 	ticker: string;
+	ex_date: string;
 }
 
 export interface Ticker {
 	i: string;
 	s: number;
+	q: number;
 	curr: string;
 	name: string;
 	open_bal: number;

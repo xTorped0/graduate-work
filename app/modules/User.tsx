@@ -2,12 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootReducerType } from '../store';
 import '../styles/user.scss'
+import Footer from './Footer';
 import Menu from './Menu';
 
 export default function User() {
 	const { main, additional } = useSelector((state: RootReducerType) => state.main)
-	console.log();
-
 	//
 	const { plainAccountInfoData } = additional || {}
 
@@ -131,6 +130,7 @@ export default function User() {
 					</div>
 				</div>
 			</section>
+			<Footer />
 		</>
 	)
 }
