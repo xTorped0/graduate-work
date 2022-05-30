@@ -1,6 +1,6 @@
 import { ActionP, createActionP } from '../index';
 import { Constants } from './constants'
-import { AuthData, MainData } from './types';
+import { AuthData, MainData, AdditionalData } from './types';
 
 type SetDialogOpenedType = ActionP<typeof Constants.SET_DIALOG_OPENED, boolean>
 export function setDialogOpened(isOpen: boolean): SetDialogOpenedType {
@@ -15,6 +15,11 @@ export function SetAuthData(data: AuthData): SetAuthDataType {
 type SetMainDataType = ActionP<typeof Constants.SET_MAIN_DATA, MainData>
 export function SetMainData(data: MainData): SetMainDataType {
 	return createActionP(Constants.SET_MAIN_DATA, data)
+}
+
+type SetAdditionalDataType = ActionP<typeof Constants.SET_ADDITIONAL_DATA, AdditionalData>
+export function SetAdditionalData(data: AdditionalData): SetAdditionalDataType {
+	return createActionP(Constants.SET_ADDITIONAL_DATA, data)
 }
 
 type SetErrorType = ActionP<typeof Constants.SET_ERROR, Error>

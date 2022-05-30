@@ -1,9 +1,26 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootReducerType } from '../store';
 import '../styles/user.scss'
 import Menu from './Menu';
 
 export default function User() {
+	const { main, additional } = useSelector((state: RootReducerType) => state.main)
+	console.log();
+
 	//
+	const { plainAccountInfoData } = additional || {}
+
+	const {
+		account_type, client_name, client_date_open,
+		base_currency, tariff_name, activation_date
+	} = plainAccountInfoData || {}
+	const {
+		openPositionSum, posval, netAsset,
+		moneyInvested, brokerCommissioned, devidendProfit,
+		totalProfitFixed, totalProfitReal, totalProfitOut,
+		profitPercent, baseCurrency
+	} = main || {}
 
 	return (
 		<>
@@ -28,54 +45,88 @@ export default function User() {
 							</div>
 							<div className="user__text">
 								<div className="user__title">
-									<h2>Ваня Дабижа</h2>
+									<h2>
+										{ client_name }
+									</h2>
 								</div>
 								<div className="user__subtitle">
-									<h4>Киев, Украина</h4>
+									<h4>
+										{ account_type }
+									</h4>
+									<span>
+										Тариф:
+										{ tariff_name }
+										; Базова валюта:
+										{ base_currency }
+										<br />
+										Дата активації аккаунта:
+										{ activation_date }
+									</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div className="user__stats">
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Грошей у наявності </div>
-							<div className="stat-item__value"> 1000 </div>
+							<div className="stat-item__title"> Відкриті позиції </div>
+							<div className="stat-item__value">
+								{ openPositionSum + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Загальна вартість </div>
-							<div className="stat-item__value"> 3000 </div>
+							<div className="stat-item__title"> Грошові кошти </div>
+							<div className="stat-item__value">
+								{ posval + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Грошей інвестовано </div>
-							<div className="stat-item__value"> 700 </div>
+							<div className="stat-item__title"> Баланс </div>
+							<div className="stat-item__value">
+								{ netAsset + baseCurrency }
+							</div>
+						</div>
+						<div className="user__stat-item stat-item">
+							<div className="stat-item__title"> Вкладені гроші </div>
+							<div className="stat-item__value">
+								{ moneyInvested + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
 							<div className="stat-item__title"> Комісія брокера </div>
-							<div className="stat-item__value"> 150 </div>
+							<div className="stat-item__value">
+								{ brokerCommissioned + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Зароблено з девідендів </div>
-							<div className="stat-item__value"> 50 </div>
+							<div className="stat-item__title"> Дивідендний прибуток </div>
+							<div className="stat-item__value">
+								{ devidendProfit + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Комісія брокера </div>
-							<div className="stat-item__value"> 150 </div>
+							<div className="stat-item__title"> Загальний прибуток фіксований </div>
+							<div className="stat-item__value">
+								{ totalProfitFixed + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Зароблено у процентах </div>
-							<div className="stat-item__value"> 150 </div>
+							<div className="stat-item__title"> Загальний поточний прибуток </div>
+							<div className="stat-item__value">
+								{ totalProfitReal + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Зафіксовано доходу </div>
-							<div className="stat-item__value"> 2300 </div>
+							<div className="stat-item__title"> Доступно для виводу </div>
+							<div className="stat-item__value">
+								{ totalProfitOut + baseCurrency }
+							</div>
 						</div>
 						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Дохід на данний час </div>
-							<div className="stat-item__value"> 150 </div>
-						</div>
-						<div className="user__stat-item stat-item">
-							<div className="stat-item__title"> Валюта </div>
-							<div className="stat-item__value"> доллар </div>
+							<div className="stat-item__title"> Загальний прибуток у % </div>
+							<div className="stat-item__value">
+								{ profitPercent }
+								%
+							</div>
 						</div>
 					</div>
 				</div>

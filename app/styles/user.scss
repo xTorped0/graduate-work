@@ -65,16 +65,22 @@
 	}
 
 	&__subtitle {
-		font-family: Tourney;
+		// font-weight: 600;
+    font-family: "Gill Sans", sans-serif;
+
+		span {
+			font-style: italic;
+		}
 	}
 
 	&__stats {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 
 		gap: 1em 2em;
 
-		margin-top: 4em;
+		margin: 4em 0 0;
 	}
 
 	&__stat-item {
@@ -82,8 +88,8 @@
 	}
 
 	.stat-item {
-		width: 15em;
-		white-space: nowrap;
+		width: 20%;
+		// white-space: nowrap;
 
 			&__title {
 				font-size: 120%;
