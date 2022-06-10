@@ -1,8 +1,10 @@
-@import 'fonts.scss';
-@import 'normal.scss';
-@import 'constants.scss';
+@import "fonts.scss";
+@import "normal.scss";
+@import "constants.scss";
 
-#root, body, html {
+#root,
+body,
+html {
 	display: flex;
 	flex-direction: column;
 
@@ -14,10 +16,10 @@
 
 #root {
 	color: $primary-white;
-	background: url('../../assets/background.png') center / cover no-repeat #1a1a1a50;;
+	background: url("../../assets/background.png") center / cover no-repeat #1a1a1a50;
 }
 
-#root>section {
+#root > section {
 	flex: 1;
 	overflow: hidden;
 }
@@ -61,10 +63,9 @@
 
 		background: #2a2a2a;
 
-		
 		align-self: center;
 
 		border-radius: 0 0.5em;
-    overflow: hidden;
+		overflow: hidden;
 	}
 }

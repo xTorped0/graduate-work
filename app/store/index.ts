@@ -9,7 +9,7 @@ const appReducer = combineReducers({
 
 const store = createStore(
 	appReducer,
-	composeWithDevTools(applyMiddleware(thunkMiddleware)) // (!) Only needed in 'development'
+	composeWithDevTools(applyMiddleware(thunkMiddleware))
 )
 
 const { dispatch } = store;
