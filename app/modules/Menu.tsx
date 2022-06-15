@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
 import { RootReducerType } from '../store'
 
 import { setDialogOpened } from '../store/main/actions'
@@ -12,7 +12,7 @@ export default function Menu() {
 	return (
 		<nav className="menu">
 			{
-				auth && !error
+				auth?.token && !error
 					? <Authorized />
 					: <Unauthorized />
 			}
@@ -41,9 +41,12 @@ function Unauthorized() {
 function Authorized() {
 	const dispatch = useDispatch()
 
+	const navigate = useNavigate();
+
 	const onLogOut = () => {
 		// @ts-ignore
 		dispatch(logOut())
+		navigate('/main')
 	}
 
 	return (

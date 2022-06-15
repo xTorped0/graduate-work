@@ -8,10 +8,10 @@ import { RootReducerType } from '../store';
 import { setDialogOpened } from '../store/main/actions';
 
 import '../styles/auth.scss'
-import { getInitData } from '../store/main/thunks';
+import { getInitData, setNumber } from '../store/main/thunks';
 
 export default function Auth() {
-	const { isDialogOpen } = useSelector((state: RootReducerType) => state.main) || {}
+	const { isDialogOpen, auth } = useSelector((state: RootReducerType) => state.main) || {}
 	const [inputs, setInputs] = useState({ number: '', token: '' })
 	const { number, token } = inputs
 
@@ -25,8 +25,14 @@ export default function Auth() {
 	}
 
 	const onAuth = () => {
-		// @ts-ignore
-		dispatch(getInitData(inputs))
+		if(auth?.number) {
+			// @ts-ignore
+			dispatch(getInitData(inputs))
+			setInputs({ number: '', token: '' })
+		} else {
+			// @ts-ignore
+			dispatch(setNumber(inputs.number))
+		}
 	}
 
 	return (
@@ -37,7 +43,7 @@ export default function Auth() {
 						Не знаете, як авторизуватися?
 						Для того, щоб дістати свій токен потрібно звернутися до
 						&nbsp;
-						<a href="#" target="_blank" rel="noreferrer">телеграм боту</a>
+						<a href="http://t.me/MergeTradeBot" target="_blank" rel="noreferrer">телеграм боту</a>
 						&nbsp;
 						та слідувати інструкціям
 					</p>
@@ -57,14 +63,19 @@ export default function Auth() {
 									onChange={onChange('number')}
 									value={number}
 								/>
-								<div className="auth__placeholder">
-									Токен
-								</div>
-								<Input
-									className="auth__input"
-									onChange={onChange('token')}
-									value={token}
-								/>
+								{ auth?.number ? (
+									<>
+										<div className="auth__placeholder">
+											Токен
+										</div>
+										<Input
+											className="auth__input"
+											onChange={onChange('token')}
+											value={token}
+										/>
+									</>
+								)
+									: ''}
 							</form>
 						</div>
 					</div>
@@ -73,7 +84,7 @@ export default function Auth() {
 						<button
 							type="button"
 							onClick={onAuth}
-							className={`${(number && token) ? 'active' : ''}`}
+							className={`${(auth?.number ? number && token : number) ? 'active' : ''}`}
 						>
 							&gt;
 						</button>

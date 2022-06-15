@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = require('./config.json');
+const config = require('./config.js');
 
 module.exports = {
 	mode: 'development',

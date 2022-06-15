@@ -82,6 +82,6 @@ export interface AdditionalData {
 
 
 export interface AuthData {
-	number: string;
-	token: string;
+	number?: string;
+	token?: string;
 }
