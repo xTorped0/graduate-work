@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = require('./config.js');
+const config = require('./config.json');
 
 module.exports = {
 	mode: 'development',
@@ -90,6 +90,10 @@ module.exports = {
 			progress: true,
 		},
 		historyApiFallback: true,
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			// 'Content-Type': 'application/json'
+		},
 		// hot: true
 	},
 	plugins: [

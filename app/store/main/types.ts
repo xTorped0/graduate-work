@@ -1,10 +1,10 @@
 export interface MainData {
-	openPositionSum: number;
+	openPositionsSum: number;
 	posval: number;
 	netAsset: number;
 	moneyInvested: number;
 	brokerCommissioned: number;
-	devidendProfit: number;
+	dividendProfit: number;
 	totalProfitFixed: number;
 	totalProfitReal: number;
 	totalProfitOut: number;

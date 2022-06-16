@@ -15,8 +15,8 @@ export default function User() {
 		base_currency, tariff_name, activation_date
 	} = plainAccountInfoData || {}
 	const {
-		openPositionSum, posval, netAsset,
-		moneyInvested, brokerCommissioned, devidendProfit,
+		openPositionsSum, posval, netAsset,
+		moneyInvested, brokerCommissioned, dividendProfit,
 		totalProfitFixed, totalProfitReal, totalProfitOut,
 		profitPercent, baseCurrency
 	} = main || {}
@@ -69,7 +69,7 @@ export default function User() {
 						<div className="user__stat-item stat-item">
 							<div className="stat-item__title"> Відкриті позиції </div>
 							<div className="stat-item__value">
-								{ openPositionSum + baseCurrency }
+								{ openPositionsSum + baseCurrency }
 							</div>
 						</div>
 						<div className="user__stat-item stat-item">
@@ -99,7 +99,7 @@ export default function User() {
 						<div className="user__stat-item stat-item">
 							<div className="stat-item__title"> Дивідендний прибуток </div>
 							<div className="stat-item__value">
-								{ devidendProfit + baseCurrency }
+								{ dividendProfit + baseCurrency }
 							</div>
 						</div>
 						<div className="user__stat-item stat-item">

@@ -139,7 +139,7 @@ export default function Stats() {
 												{ summPaper.market_value + additional.plainAccountInfoData.base_currency }
 											</td>
 											<td className="paper__amount">
-												{ summPaper.open_bal + additional.plainAccountInfoData.base_currency }
+												{ summPaper.open_bal.toFixed(3) + additional.plainAccountInfoData.base_currency }
 											</td>
 										</tr>
 									</tfoot>
@@ -168,7 +168,7 @@ function DividendItem({ data }: { data: Dividend }) {
 				{ ex_date }
 			</td>
 			<td className="divident__amount">
-				{ amount + currency }
+				{ amount.toFixed(3) + currency }
 			</td>
 		</tr>
 	)
@@ -208,7 +208,7 @@ function PaperItem({ data }: { data: Ticker }) {
 				{ market_value + curr }
 			</td>
 			<td className="paper__amount">
-				{ open_bal + curr }
+				{ open_bal.toFixed(3) + curr }
 			</td>
 		</tr>
 	)

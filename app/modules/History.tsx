@@ -59,7 +59,7 @@ export default function User() {
 								</tr>
 							</thead>
 							<tbody>
-								{ additional.history.map(item => <Item key={item.isin} data={item} />)}
+								{ additional.history.map((item, key) => <Item key={item.isin + key} data={item} />)}
 							</tbody>
 						</table>
 					</div>
